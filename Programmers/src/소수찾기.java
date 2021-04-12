@@ -1,9 +1,20 @@
+import java.util.ArrayList;
 
-public class ¼Ò¼öÃ£±â {
+public class ì†Œìˆ˜ì°¾ê¸° {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String numbers = "17";
+		System.out.print(solution(numbers));
 	}
+	public static int solution(String numbers) {
+        int answer = 0;
+        ArrayList<String> array = new ArrayList<String>();
+        String[] num = numbers.split("");
+        
+       
+        System.out.print(array);
+        return answer;
+    }
+	
 
 }

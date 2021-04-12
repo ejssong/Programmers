@@ -1,22 +1,38 @@
-import java.util.ArrayList;
 
-public class ¹®ÀÚ¿­¾ĞÃà {
+public class ë¬¸ìì—´ì••ì¶• {
 
 	public static void main(String[] args) {
-		String s = "aabbaccc";
-		System.out.println(solution(s));
+		String s = "xababcdcdababcdcd";
+		System.out.print(solution(s));
 	}
 	public static int solution(String s) {
         int answer = 0;
+      
+        StringBuilder compressed = new StringBuilder();
         
-        for(int i = 0; i < s.length() - 1 ; i-- ) {
-        	 ArrayList<String> array = new ArrayList<>();
-        	 String a = s.substring(i, i + 1);
-        	 array.add(a);
-        
-        	 System.out.println(array);
+        for(int i = 0; i < s.length(); i++) {
+        	answer++;
+        	
+        	if( i + 1 >= s.length() || s.charAt(i) != s.charAt(i+1)) {
+        		if(answer != 1) {
+        			compressed.append(answer);
+        		}
+        	
+        		compressed.append(s.charAt(i));
+        		
+        		answer = 0;
+        	}
         }
-        return answer;
+        System.out.println("compressed " + compressed.toString());
+    	return compressed.length();
+//        if(compressed.length() < s.length()) {
+//        	System.out.println("compressed " + compressed.toString());
+//        	return compressed.length();
+//        }else {
+//        	System.out.println("s : " + s);
+//        	return s.length();
+//        }
+        
     }
 
 }
